@@ -3,7 +3,6 @@
 
 <html>
 
-
 <head runat="server">
 <body background="wallpaper.png">
 
@@ -45,6 +44,7 @@ on <select>
   <option value="5">Saturday</option>
   <option value="6">Sunday</option>
 </select>
+<input type="submit" value="Submit">
 <br>
 <br>
 
@@ -92,11 +92,53 @@ Current Time:
 <div>
 
 <br>
-<p><h1><font color="red">The Library is now CLOSED </font></p></h1>
 
+<script type="text/javascript">
+
+
+var timeoutID;
+	
+function show() {
+ var currenthrs = new Date().getHours();
+ var currentmins = new Date().getMinutes();
+ var currenthrsmins = currenthrs + (currentmins/60); 
+
+ var daily = [
+  ['OPEN',[7.5],[24]], 
+ ['CLOSED',[0],[7.5]]
+ ];
+
+var output = "";
+ for (var i =0; i <daily.length; i++) {
+  if ((currenthrsmins >= daily[i][1]) && (currenthrsmins < daily[i][2])) {
+   output += daily[i][0];
+   document.getElementById("mymessage").innerHTML = output;
+  } 
+ } 
+ showTime();
+ timeoutID = setTimeout('show()', 1000);
+} 
+
+ function checkTime(j) {
+  if (j<10) {
+   j="0" + j;
+  } 
+return j;
+ } 
+
+</script>
+
+
+<h2><font color="red">The Library is now</h2>
+<h1><body onload="show();"></h1>
+
+<div id="txt"></div>
+<div id = "mymessage">Loading..</div>
+</body>
 </div>
 <br>
-<a href="oviathours.pdf">Fall Semester Oviat Library Hours</a>
+</font>
+<a href="oviathours.pdf">Fall Semester Oviatt Library Hours</a>
 
 </form>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sui2l6pw4Tg" frameborder="0" allowfullscreen></iframe>
