@@ -8,4 +8,4 @@ Successfully created a dir for my simple.cgi within cgi-bin on http://www.csun.e
 
 Created a webpage implementing javascript & html to solve a user story regarding Oviatt Library Hours.
 
-Now going to link webpage to directory.
+Successfully used FTP to link javascript page into directory http://www.csun.edu/~jad62176/cgi-bin/
