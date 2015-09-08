@@ -1,7 +1,5 @@
 #! /bin/bash
 
-# This is a little CGI program
-
 
 ###################################################################
 # The following are environment variables that are available to you
