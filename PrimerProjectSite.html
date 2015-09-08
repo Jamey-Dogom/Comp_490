@@ -1,0 +1,53 @@
+
+<html>
+
+<head runat="server">
+<body background="wallpaper1.png">
+
+<h2>Oviatt Library Hours</h2>
+<h4>As a user I would like to know if the school library is open at __(time)__ on __(date)__ .</h4>
+Current Day:
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+ShowTime();
+});
+function ShowTime() {
+var dt = new Date();
+document.getElementById("lblTime").innerHTML = dt.toLocaleTimeString();
+ 
+}
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+
+if(dd<10) {
+    dd='0'+dd
+} 
+
+if(mm<10) {
+    mm='0'+mm
+} 
+
+today = mm+'/'+dd+'/'+yyyy;
+document.write(today);
+</script>
+</head>
+<body >
+<form id="form1" runat="server">
+<div>
+Current Time:
+<label id="lblTime" ></label>
+</div>
+<div>
+</div>
+<br><br><br><br><br><br><br><br>
+<a href="oviathours.pdf">Fall Semester Oviat Library Hours</a>
+</form>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sui2l6pw4Tg" frameborder="0" allowfullscreen></iframe>
+</body>
+</html>
